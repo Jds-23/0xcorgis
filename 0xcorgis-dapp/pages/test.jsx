@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import Web3Modal from "web3modal"
 import { ethers, utils, BigNumber } from 'ethers'
-
-import playAddress  from '../config'
-
+import { playAddress }  from '../config'
 import Play from '../artifacts/contracts/Play.sol/Play.json'
+
+
+
 
 export default function Home() {
     useEffect(() => {
