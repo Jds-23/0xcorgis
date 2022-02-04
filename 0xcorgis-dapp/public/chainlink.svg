@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="174px" height="200px" viewBox="0 0 174 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 18</title>
+    <defs>
+        <linearGradient x1="47.4119972%" y1="0%" x2="62.8355457%" y2="74.8656938%" id="linearGradient-1">
+            <stop stop-color="#3C94F2" offset="0%"></stop>
+            <stop stop-color="#1C5BE0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-18">
+            <path d="M86.5884596,0 L174,50.0403653 L174,150.339036 L86.5884596,200 L0,150.339036 L0,50.0403653 L86.5884596,0 Z M87.1898399,42.6086957 L37.0964467,70.4835164 L37.0964467,128.75603 L87.1898399,157.391304 L137.786802,128.75603 L137.786802,70.4835164 L87.1898399,42.6086957 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+            <polygon id="Path-75" fill="#0652AA" points="87 42.6086957 76.6544259 36.4282222 28.5056018 65.5320525 28.5056018 125.640148 80.9931524 162.1918 87.4416244 157.391304 37.0964467 123.368079 37.0964467 70.4835164"></polygon>
+            <polygon id="Path-76" fill="#1C64B7" points="87 42.6086957 137.786802 70.4835164 137.786802 128.75603 87.1898399 157.391304 93.9385019 162.1918 141.801316 131.893749 140.935479 67.6878915 92.5895966 38.377877"></polygon>
+        </g>
+    </g>
+</svg>

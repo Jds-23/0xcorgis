@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="204px" height="204px" viewBox="0 0 204 204" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 21</title>
+    <defs>
+        <linearGradient x1="97.9886111%" y1="2.74143333%" x2="6.88632424%" y2="98.0732234%" id="linearGradient-1">
+            <stop stop-color="#4EE7B3" offset="0%"></stop>
+            <stop stop-color="#26CB7C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-21" transform="translate(2.000000, 2.000000)">
+            <g id="Group-19">
+                <path d="M20,0 L180,0 C191.045695,-2.02906125e-15 200,8.954305 200,20 L200,180 C200,191.045695 191.045695,200 180,200 L20,200 C8.954305,200 1.3527075e-15,191.045695 0,180 L0,20 C-1.3527075e-15,8.954305 8.954305,2.02906125e-15 20,0 Z" id="Path-77" stroke="url(#linearGradient-1)" stroke-width="4" fill="#000000"></path>
+                <polygon id="Path-78" fill="#FFFFFF" points="81.8338834 44.5302308 81.8338834 81.9992644 119.950734 81.9992644 119.950734 118.554077 155.270472 118.554077 155.270472 44.5302308"></polygon>
+                <polygon id="Path-79" fill="#FFFFFF" points="45.3239298 118.554077 45.3239298 155.861557 81.8338834 155.861557 81.8338834 118.554077"></polygon>
+                <polygon id="Path-80" fill="#41DEA2" points="119.950734 81.9992644 81.8338834 81.9992644 81.8338834 78.4016205 81.8338834 44.5302308 85.0516222 44.5302308 85.0516222 78.4016205 123.751984 78.4016205 123.751984 118.554077 119.950734 118.554077"></polygon>
+                <polygon id="Path-81" fill="#20B97E" points="119.950734 81.9992644 123.751984 78.4016205 123.751984 118.554077 119.950734 118.554077"></polygon>
+            </g>
+            <polygon id="Path-82" fill="#20B97E" points="45.3239298 118.554077 45.3239298 155.861557 81.8338834 155.861557 81.8338834 153.51679 47.9087791 153.51679 47.9087791 118.554077"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+@import url("//hello.myfonts.net/count/3735cf");
+    
+@font-face {
+    font-family: 'Eina03-SemiBold';
+    src: url('../webfonts/3735CF_0_0.eot');
+    src: url('../webfonts/3735CF_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3735CF_0_0.woff2') format('woff2'),url('../webfonts/3735CF_0_0.woff') format('woff'),url('../webfonts/3735CF_0_0.ttf') format('truetype');
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Eina03-Regular';
+    src: url('../webfonts/3735CF_1_0.eot');
+    src: url('../webfonts/3735CF_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/3735CF_1_0.woff2') format('woff2'),url('../webfonts/3735CF_1_0.woff') format('woff'),url('../webfonts/3735CF_1_0.ttf') format('truetype');
+    font-display: fallback;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Eina03-Regular";
+    width: 100%;
+    position: relative;
+    
+}
+
+.selected {
+    background: linear-gradient(135deg, #FF3366, #CB5EEE, #ee7752, #FFCC33, #00B3CC, #E233FF, #23a6d5);
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+    transition-property: all;
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+}
+
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135px" height="135px" viewBox="0 0 135 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-14" opacity="0.649731591" transform="translate(27.000000, 5.000000)">
+            <polygon id="Path-53" fill="#2B2B2B" points="0 36 20.1238571 72 40 36"></polygon>
+            <polygon id="Path-72" fill="#1C1C1C" points="0 36 20.0427781 0 40 36"></polygon>
+            <polygon id="Path-73" fill="#383838" points="20 0 60 0 39.9751878 36"></polygon>
+            <polygon id="Path-74" fill="#666666" points="40 36 80 36 60 0"></polygon>
+            <polygon id="Path-75" fill="#2B2B2B" points="41 89 60.9382533 53 81 88.9357331"></polygon>
+            <polygon id="Path-76" fill="#1C1C1C" points="41 89 60.9383853 125 81 88.9357331"></polygon>
+            <polygon id="Path-77" fill="#383838" points="41 89 20 125 61 125"></polygon>
+            <polygon id="Path-78" fill="#666666" points="20 125 0 89 41 89"></polygon>
+        </g>
+        <polygon id="Path-88" points="47 77 27 41 47.0427781 5 87 5 107 41 66.9751878 41"></polygon>
+        <polygon id="Path-89" points="68 94 27 94 47 130 88 130 108 94 88 58"></polygon>
+    </g>
+</svg>
