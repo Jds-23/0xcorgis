@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, createRef } from 'react'
 import { useRive } from "rive-react";
 import Link from 'next/link'
+import Image from 'next/image'
+
 
 const Title = styled.h1`
     font-size: 32px;
@@ -208,7 +210,7 @@ const Learn = () => {
                     whileTap={{ scale: 0.9 }} >
                     <Link href={d.comingSoon ===false ? `learn/${d.sponsors}` : ''}>
                     <LearnItem className={d.comingSoon ? 'coming-soon' : ''}>
-                        <img style={{ "height": "120px", marginTop: "35px" }} src={`${d.sponsors}.svg`} />
+                        <Image style={{ "height": "120px", marginTop: "35px" }} src={`${d.sponsors}.svg`} />
                         <Title>{d.sponsors}</Title>
                     </LearnItem>
                     </Link>    
