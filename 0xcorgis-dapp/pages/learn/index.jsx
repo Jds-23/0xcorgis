@@ -203,7 +203,7 @@ const Learn = () => {
         <Title>I want to learn...</Title>
         <LearnGrid>
             {data.map((d, index) => {
-                return <motion.div
+                return <motion.div key={index}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }} >
                     <Link href={d.comingSoon ===false ? `learn/${d.sponsors}` : ''}>

@@ -17,13 +17,13 @@ export default function Polygon() {
             <title>Road to Polygon</title>
         </Head>
         <div >
-            {pathways.map((data) => {
+            {pathways.map((data, index) => {
                 if (data.level.length == 1) {
-                    return <div>
+                    return <div key={index}>
                         {data.level[0].title}
                     </div>
                 } else {
-                    return (<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                    return (<div key={index} style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                         {data.level.map((l, index) => {
                             return <div key={index}>
                                 {l.title}

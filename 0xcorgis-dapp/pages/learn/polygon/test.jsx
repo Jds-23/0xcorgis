@@ -38,8 +38,8 @@ export default function Test() {
                 })}
             </div>
             <div>
-                {wordbank.map((d) => {
-                    return <button disabled={d.disabled} onClick={() => {
+                {wordbank.map((d, index) => {
+                    return <button  key={index} disabled={d.disabled} onClick={() => {
                         setPhrase([...phrase, d])
                         d.disabled = true;
                     }

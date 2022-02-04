@@ -266,11 +266,12 @@ export default function Polygon() {
                     </div>
                     <div style={{ display: "grid", justifyContent: "center" }}>
                         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", height: "450px", alignItems: "center", gridGap: "15px", }}>
-                            {data[imageIndex]?.choice?.map((d) => {
+                            {data[imageIndex]?.choice?.map((d, index) => {
                                 return <motion.div
+                                    key={index}
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }} >
-                                    <div className={selected == d ? "selected" : ""} onClick={() => { setSelected(d) }} style={{
+                                    <div  className={selected == d ? "selected" : ""} onClick={() => { setSelected(d) }} style={{
                                         color: "white", width: "200px", height: "250px", cursor: "pointer", borderRadius: "16px", padding: "15px",
                                         borderRadius: "16px",
                                         borderWidth: selected == d ? '5px 5px 10px' : "3px 3px 10px",
