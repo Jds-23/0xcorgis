@@ -210,7 +210,7 @@ const Learn = () => {
                     whileTap={{ scale: 0.9 }} >
                     <Link href={d.comingSoon ===false ? `learn/${d.sponsors}` : ''}>
                     <LearnItem className={d.comingSoon ? 'coming-soon' : ''}>
-                        <Image style={{ "height": "120px", marginTop: "35px" }} src={`${d.sponsors}.svg`} />
+                        <img style={{ "height": "120px", marginTop: "35px" }} src={`${d.sponsors}.svg`} />
                         <Title>{d.sponsors}</Title>
                     </LearnItem>
                     </Link>    

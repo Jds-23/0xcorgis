@@ -193,7 +193,7 @@ const Home = () => {
                 <div >
                     <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}>THE GAME</h3>
                     <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>0x</Title>corgis</h1>
-                    <p style={{ color: "#253078" }}>Defeat imposter syndrome and explore the web3 space  with  puzzle and comics</p>
+                    <p style={{ color: "#253078" }}>Defeat imposter syndrome and explore the web3 space  by converting documentation into puzzle and comics</p>
                 </div>
                 <div style={{
                     display: "flex",
