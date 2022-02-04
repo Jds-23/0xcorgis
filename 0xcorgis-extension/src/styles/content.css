@@ -107,9 +107,6 @@
   border-radius: 16px;
 }
 
-
-
-
 .MetaMask-Corgis-Step-2 {
   cursor: pointer;
   border-radius: 16px;
@@ -164,7 +161,6 @@
 
 
 .Oxcorgis-tooltip {
-
   cursor: pointer;
   border-radius: 16px;
   padding: 15px;
@@ -186,4 +182,10 @@
 
 
 }
+
+.Oxcorgis-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 

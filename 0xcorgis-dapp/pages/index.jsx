@@ -3,6 +3,7 @@ import NavBar from '../components/NavBar';
 import styled from '@emotion/styled'
 import { useState } from 'react';
 import Image from 'next/image'
+import Link from 'next/link';
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { useRive } from "rive-react";
@@ -139,7 +140,11 @@ const Home = () => {
                     <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}> Build + Learn + Earn + Explore + Play</h3>
                     <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>Learn 2 Earn Games</Title> </h1>
                     <h2 style={{ fontSize: "2em", margin: "0px", color: "#253078" }}>A fun, cute, informative, gateway to web3!</h2>
-                    <Button><strong>Press Start to Play ▶ </strong></Button>
+                    <Link href="learn">
+                    <Button>
+                      <strong>Press Start to Play ▶ </strong>
+                      </Button>
+                      </Link>
                 </div>
                 <div style={{
                     display: "flex",

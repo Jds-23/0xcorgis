@@ -113,8 +113,8 @@ const NavBar = () => {
                             </svg>*/}
                         </div>
 
-                        <h1>Connect your wallet</h1>
-                        <Button onClick={async () => {
+                        {/* <h1>Connect your wallet</h1> */}
+                        {/* <Button onClick={async () => {
                             await activateBrowserWallet()
                         }}>
                             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
@@ -146,7 +146,7 @@ const NavBar = () => {
                                 </div>
                                 <h1>Metamask</h1>
                             </div>
-                        </Button>
+                        </Button> */}
 
                         {/* <button onClick={async () => {
                             const fortmatic = new FortmaticConnector({
@@ -170,14 +170,6 @@ const NavBar = () => {
 
                     <div>
 
-                    </div>
-                    <div style={{ display: "grid", gridGap: "10px", gridTemplateColumns: "1fr 1fr" }} >
-                        {!account && <div onClick={() => setShowConnectModal(true)}>
-                            Connect Wallet
-                    </div>}
-
-                        {account && <ShortAddress address={account} avatar={true} />}
-                        {account && <button onClick={deactivate}> Disconnect </button>}
                     </div>
                 </nav>
             </Header>
