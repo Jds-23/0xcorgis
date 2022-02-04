@@ -122,16 +122,16 @@ const NavBar = () => {
                                     <svg width="59px" height="53px" viewBox="0 0 59 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                                         <defs>
                                             <linearGradient x1="50%" y1="13.4506863%" x2="50%" y2="100%" id="linearGradient-j44lx117al-1">
-                                                <stop stop-color="#FFB500" offset="0%"></stop>
-                                                <stop stop-color="#FF9F00" offset="13.268104%"></stop>
-                                                <stop stop-color="#FF7E00" offset="100%"></stop>
+                                                <stop stopColor="#FFB500" offset="0%"></stop>
+                                                <stop stopColor="#FF9F00" offset="13.268104%"></stop>
+                                                <stop stopColor="#FF7E00" offset="100%"></stop>
                                             </linearGradient>
                                             <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-j44lx117al-2">
-                                                <stop stop-color="#EFE1D9" offset="0%"></stop>
-                                                <stop stop-color="#DAC0B2" offset="100%"></stop>
+                                                <stop stopColor="#EFE1D9" offset="0%"></stop>
+                                                <stop stopColor="#DAC0B2" offset="100%"></stop>
                                             </linearGradient>
                                         </defs>
-                                        <g id="NFT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="NFT" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                                             <g id="Group-18">
                                                 <polygon id="Path-233" fill="url(#linearGradient-j44lx117al-1)" points="3.08588465 0 21.6307804 7.28969457 36.6728921 7.28969457 55.3643047 0 59 8.69621701 54.3610434 26.8144604 59 39.5604367 55.3643047 53 41.6636304 48.608364 33.4715156 53 23.9558548 53 16.5237002 48.608364 3.60069858 53 0 39.5604367 4.24947637 26.5 0 8.69621701"></polygon>
                                                 <polygon id="Path-237" fill="url(#linearGradient-j44lx117al-2)" points="16.5237002 48.608364 24.5165457 43.233161 34.1065283 43.233161 41.6636304 48.608364 33.4715156 53 23.9013189 53"></polygon>

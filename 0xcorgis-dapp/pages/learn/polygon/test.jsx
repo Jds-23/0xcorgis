@@ -29,8 +29,8 @@ export default function Test() {
         <div >
             <h1>What is Metamask?</h1>
             <div>
-                {phrase.map((d) => {
-                    return <button onClick={() => {
+                {phrase.map((d, index) => {
+                    return <button key={index} onClick={() => {
                         setPhrase(phrase.filter(item => item.word !== d.word));
                         d.disabled = false;
                     }

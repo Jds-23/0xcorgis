@@ -25,13 +25,9 @@ const data = [{
     choice: shuffle(["ethglobal", "polygon", "chainlink"]),
     answer: "polygon",
     type: "multiple"
-},
-{
-    question: "",
-    choice: shuffle(['a', 'b', 'c']),
-    answer: "a",
-    type: "match"
-}]
+}
+
+]
 
 
 
@@ -165,11 +161,11 @@ export default function Polygon() {
             <svg width={dimensions.width} height={dimensions.height}>
                 <defs>
                     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-k5_o0mah1d-1">
-                        <stop stop-color={isCorrect === -1 ? "rgb(130, 71, 229)" : (isCorrect ? 'green' : '#ff4b4b')} offset="0%"></stop>
-                        <stop stop-color={isCorrect === -1 ? "rgb(130, 71, 229)" : (isCorrect ? 'green' : '#ff4b4b')} offset="100%"></stop>
+                        <stop stopColor={isCorrect === -1 ? "rgb(130, 71, 229)" : (isCorrect ? 'green' : '#ff4b4b')} offset="0%"></stop>
+                        <stop stopColor={isCorrect === -1 ? "rgb(130, 71, 229)" : (isCorrect ? 'green' : '#ff4b4b')} offset="100%"></stop>
                     </linearGradient>
                 </defs>
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g fill={isCorrect === -1 ? "rgb(130, 71, 229)" : (isCorrect ? 'green' : '#ff4b4b')}>
                         <polygon id="Rectangle" points={`35 3.63797881e-12 ${dimensions.width} 3.63797881e-12 ${dimensions.width} 35 0 35`}></polygon>
                     </g>
@@ -195,7 +191,7 @@ export default function Polygon() {
                     </g>
 
                 </g>
-                <g id="Books" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Books" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g id="Artboard" transform="translate(0, 0)" fill="url(#linearGradient-k5_o0mah1d-1)">
                         <rect id="Rectangle" x={`${dimensions.width - 100}`} y='0' width="100" height="100" rx="8"></rect>
                     </g>
