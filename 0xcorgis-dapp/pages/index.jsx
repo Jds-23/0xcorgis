@@ -107,13 +107,13 @@ const Title = styled.a`
 `
 
 const params = {
-    src: "https://gateway.pinata.cloud/ipfs/QmRiTLSyft6Hu5XfhLszyY8DJEcT8iYsriW6gzTBDjEDsL?filename=miner.riv",
+    src: "https://ipfs.io/ipfs/QmRiTLSyft6Hu5XfhLszyY8DJEcT8iYsriW6gzTBDjEDsL?filename=miner.riv",
     autoplay: true,
     animations: ["platform"]
 };
 
 const params1 = {
-    src: "https://gateway.pinata.cloud/ipfs/QmQiWy1pzpHkBe6nQuwvqhfXmz7W6VEj5DwTf8MbnF6TCv?filename=minerjump.riv",
+    src: "https://ipfs.io/ipfs/QmQiWy1pzpHkBe6nQuwvqhfXmz7W6VEj5DwTf8MbnF6TCv?filename=minerjump.riv",
     autoplay: true,
     animations: ["jump"]
 };
