@@ -1,0 +1,189 @@
+.Oxcorgis {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  bottom: 0;
+  z-index: 1;
+  display: grid;
+  justify-content: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.MetaMask-Corgis-Step-1a {
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 15px;
+  border-width: 3px 3px 10px;
+  border-bottom-color: initial;
+  color: #253078;
+  border-style: solid;
+  border-top-color: initial;
+  background: linear-gradient(135deg, #FF3366, #CB5EEE, #ee7752, #FFCC33, #00B3CC, #E233FF, #23a6d5);
+  height: 65px;
+  z-index: -1;
+  width: 165px;
+  position: absolute;
+  padding: 8px;
+  border-radius: 10px;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  transition-property: all;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+  
+}
+
+.MetaMask-Corgis-Step-1a:hover {
+  transform: scale(1.5);
+}
+
+
+.MetaMask-Corgis-Step-1a:before {
+  content: "1";
+  padding: 5px 5px;
+  position: absolute;
+  top: -5px;
+  font-size: 20px;
+  color: black;
+  left: -10px;
+  width: 35px;
+  font-family: "Eina03-Regular";
+  text-align: center;
+  border-radius: 16px;
+}
+
+.MetaMask-Corgis-Step-1b {
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 15px;
+  border-width: 3px 3px 10px;
+  border-bottom-color: initial;
+  color: #253078;
+  border-style: solid;
+  border-top-color: initial;
+  background: linear-gradient(135deg, #FF3366, #CB5EEE, #ee7752, #FFCC33, #00B3CC, #E233FF, #23a6d5);
+  height: 85px;
+  z-index: -1;
+  width: 205px;
+  position: absolute;
+  padding: 8px;
+  border-radius: 10px;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  transition-property: all;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+}
+
+.MetaMask-Corgis-Step-1b:hover {
+  transform: scale(1.5);
+}
+
+
+.MetaMask-Corgis-Step-1b:before {
+  content: "1";
+  padding: 5px 5px;
+  position: absolute;
+  top: -5px;
+  font-size: 20px;
+  color: black;
+  left: -10px;
+  width: 35px;
+  font-family: "Eina03-Regular";
+  text-align: center;
+  border-radius: 16px;
+}
+
+
+
+
+.MetaMask-Corgis-Step-2 {
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 15px;
+  display: grid;
+  border-width: 3px 3px 10px;
+  border-bottom-color: initial;
+  color: #253078;
+  border-style: solid;
+  border-top-color: initial;
+  background: linear-gradient(135deg, #FF3366, #CB5EEE, #ee7752, #FFCC33, #00B3CC, #E233FF, #23a6d5);
+  height: 65px;
+  z-index: 1;
+  width: 320px;
+  position: absolute;
+  padding: 8px;
+  border-radius: 10px;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  transition-property: all;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+}
+
+.MetaMask-Corgis-Step-2:hover {
+  transform: scale(1.5);
+}
+
+.Install_MetaMask_for_Chrome {
+  color: white;
+  min-height: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgb(3, 125, 214);
+}
+
+
+.MetaMask-Corgis-Step-2:before {
+  content: "2";
+  padding: 5px 5px;
+  position: absolute;
+  top: -5px;
+  font-size: 20px;
+  color: black;
+  left: -10px;
+  width: 35px;
+  font-family: "Eina03-Regular";
+  text-align: center;
+  border-radius: 16px;
+}
+
+
+.Oxcorgis-tooltip {
+
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 15px;
+  border-width: 3px 3px 10px;
+  border-bottom-color: initial;
+  color: #253078;
+  border-style: solid;
+  border-top-color: initial;
+  position: absolute;
+  top: -75px;
+  margin: 5px;
+  font-size: 25px;
+  background: linear-gradient(135deg, #FF3366, #CB5EEE, #ee7752, #FFCC33, #00B3CC, #E233FF, #23a6d5);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  transition-property: all;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+
+
+}
+
