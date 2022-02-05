@@ -105,6 +105,7 @@ export default function Polygon() {
     const [selected, setSelected] = useState('')
     const [isCorrect, setCorrect] = useState(-1)
     const [account, setAccount] = useState();
+    const [isStake, setStake] = useState(false)
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
@@ -136,6 +137,20 @@ export default function Polygon() {
         const signer = provider.getSigner()
         const account = await signer.getAddress();
         setAccount(account);
+        const contract = new ethers.Contract(playAddress, Play.abi, signer)
+        const balance = await contract.balances(account)
+        console.log("Balance")
+        console.log(balance)
+
+        const data = BigNumber.from(balance);
+        console.log(data);
+        console.log(utils.formatEther(data));
+        if(utils.formatEther(data) > 0.0025){
+            setStake(true)
+        } else {
+            setStake(false)
+        }
+
 
     }
 
@@ -171,6 +186,7 @@ export default function Polygon() {
         const price = ethers.utils.parseUnits(`${earnPrice}`, 'ether')
         const transaction = await contract.earn(price)
         await transaction.wait()
+
     }
 
 
@@ -308,7 +324,7 @@ export default function Polygon() {
                         {!account && <Button onClick={connect}>Please Connect Wallet</Button>}
                         {
                             account  && (imageIndex === 0 ?
-                                <Button onClick={play} >Stake 0.0025 Polygon to Play</Button> :
+                                !isStake ? <Button onClick={play} >Stake 0.0025 Polygon to Play</Button>: <Button onClick={()=>{paginate(1)}}>Continue</Button>:
                                 imageIndex === data.length - 1 ? <Button onClick={earn}>Earn</Button> : <Button disabled={!selected} onClick={check} >Check</Button>)
                         }
                     </div>

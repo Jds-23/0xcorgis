@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect, useState, createRef } from 'react'
 import { useRive } from "rive-react";
-
+import Link from 'next/link';
 
 const useRefDimensions = (ref) => {
     const [height, setHeight] = useState(1);
@@ -20,10 +20,10 @@ const useRefDimensions = (ref) => {
 
 const pathways = [
     {
-        level: [{ title: "Hello Metamask!" }]
+        level: [{ title: "Hello Metamask!", link: "https://metamask.io/", newTab: true }]
     },
     {
-        level: [{ title: "Using Polygonscan" }, { title: "Add the Polygon network manually" }],
+        level: [{ title: "About Polygon", link: "/learn/polygon/intro", newTab: false }, { title: "Add the Polygon network", link: "https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/", newTab: true }],
     }
 ]
 
@@ -39,12 +39,12 @@ export default function Polygon() {
 
     };
     const { RiveComponent: LogoRive, rive: logorive } = useRive(params);
-    
+
     return <>
         <Head>
             <title>Road to Polygon</title>
         </Head>
-        <div ref={divRef} style={{ margin: 0, height: "100%", width: "100%", position: "fixed",  top: "0", zIndex: "-1" }}>
+        <div ref={divRef} style={{ margin: 0, height: "100%", width: "100%", position: "fixed", top: "0", zIndex: "-1" }}>
             <svg width={dimensions.width} height={dimensions.height}>
                 <defs>
                     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-k5_o0mah1d-1">
@@ -62,7 +62,7 @@ export default function Polygon() {
                     <g fill={"rgb(130, 71, 229)"}>
                         <polygon id="Rectangle" points={`${dimensions.width - 35} 3.63797881e-12 ${dimensions.width - 25} 3.63797881e-12 ${dimensions.width - 25} ${dimensions.height - 35} ${dimensions.width - 35} ${dimensions.height - 35}`}></polygon>
                     </g>
-                    <g fill={"rgb(130, 71, 229)" }>
+                    <g fill={"rgb(130, 71, 229)"}>
                         <polygon id="Rectangle" points={`0,${dimensions.height - 35}  0,${dimensions.height}  ${dimensions.width - 35},${dimensions.height} ${dimensions.width},${dimensions.height - 35}`}></polygon>
                     </g>
                     <g fill={"rgb(130, 71, 229)"}>
@@ -92,27 +92,31 @@ export default function Polygon() {
         </div>
 
 
-        <section style={{display: "grid", alignContent: "center", alignItems: "center", justifyContent: "center", justifyItems: "center", height: "100vh"}}>
-            <h1 style={{ color: "white"}}>Choose your path</h1>
+        <section style={{ display: "grid", alignContent: "center", alignItems: "center", justifyContent: "center", justifyItems: "center", height: "100vh" }}>
+            <h1 style={{ color: "white" }}>Choose your path</h1>
             <section >
-            {pathways.map((data, index) => {
-                if (data.level.length == 1) {
-                    return <div key={index} style={{display: "grid", color: "white", textAlign: "center"}}>
-                        <img style={{width: "75px"}} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg"/>
-                        <span>{data.level[0].title}</span>
-                    </div>
-                } else {
-                    return (<div key={index} style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                        {data.level.map((l, index) => {
-                            return <div key={index} style={{display: "grid", color: "white", textAlign: "center"}}>
-                                 <img style={{width: "75px"}} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg"/>
-                                <span>{l.title}</span>
+                {pathways.map((data, index) => {
+                    if (data.level.length == 1) {
+                        return <a href="https://metamask.io/" target="_blank">
+                            <div key={index} style={{ display: "grid", color: "white", textAlign: "center", alignItems: "center", justifyItems: "center" }}>
+                                <img style={{ width: "75px" }} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg" />
+                                <span>{data.level[0].title}</span>
                             </div>
-                        })
-                        }
-                    </div>)
-                }
-            })}
+                        </a>
+                    } else {
+                        return (<div key={index} style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+                            {data.level.map((l, index) => {
+                                return <Link href={l.link}>
+                                    <div key={index} style={{ display: "grid", color: "white", textAlign: "center", alignItems: "center", justifyItems: "center" }}>
+                                        <img style={{ width: "75px" }} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg" />
+                                        <span>{l.title}</span>
+                                    </div>
+                                </Link>
+                            })
+                            }
+                        </div>)
+                    }
+                })}
             </section>
         </section>
 
