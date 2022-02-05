@@ -36,7 +36,6 @@ const swipePower = (offset, velocity) => {
 
 //background-color:  #B4D0FF;
 const Hero = styled.section`
-    background-color:  #EBF0FF;
     width: 100%;
     min-height: calc(100vh - 240px);
     padding-top: 150px;
@@ -137,9 +136,9 @@ const Home = () => {
         <Hero style={{ zIndex: "305" }}>
             <section style={{ width: "1080px", display: "grid", gridTemplateColumns: "1fr 1fr", zIndex: "305" }}>
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gridRowGap: "15px" }}>
-                    <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}> Build + Learn + Earn + Explore + Play</h3>
-                    <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>Learn 2 Earn Games</Title> </h1>
-                    <h2 style={{ fontSize: "2em", margin: "0px", color: "#253078" }}>Making web3 docs into a fun, cute, informative, game!</h2>
+                    <h3 style={{ fontSize: "1.5em", margin: "0px", color: "white" }}> Build + Learn + Earn + Explore + Play</h3>
+                    <h1 style={{ fontSize: "3.5em", margin: "0px", color: "white" }}><Title>Learn 2 Earn Games</Title> </h1>
+                    <h2 style={{ fontSize: "2em", margin: "0px", color: "white" }}>Making web3 docs into a fun, cute, informative, game!</h2>
                     <Link href="learn">
                     <Button>
                       <strong>Press Start to Play ▶ </strong>
