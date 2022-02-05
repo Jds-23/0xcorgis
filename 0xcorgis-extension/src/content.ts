@@ -75,7 +75,14 @@ if (urls.includes(window.location.href)) {
         document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
         const tooltip = document.createElement('div');
         tooltip.setAttribute("class", "Oxcorgis-tooltip");
-        tooltip.innerHTML = "<div>Add Polygon Network</div><div class='Oxcorgis-links'><a href='https://polygonscan.com/' target='_blank'>Need Help</a></div>";
+        tooltip.innerHTML = "<div>Add Polygon Network</div><div class='Oxcorgis-links' style='grid-template-columns: 1fr'><a href='https://polygonscan.com/' target='_blank'>Need Help</a></div>";
+        document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
+    }
+    if(window.location.href === "https://polygonscan.com/"){
+        document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
+        const tooltip = document.createElement('div');
+        tooltip.setAttribute("class", "Oxcorgis-tooltip");
+        tooltip.innerHTML = "<div>Scroll to the Bottom!</div>";
         document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
     }
 
@@ -178,9 +185,7 @@ if (urls.includes(window.location.href)) {
 
         }, delayMetaMaskStep2);
     }
-    if (window.location.href === 'https://docs.polygon.technology/docs/develop/metamask/hello') {
-        console.log("Polygon")
-    }
+
 
 
 }
