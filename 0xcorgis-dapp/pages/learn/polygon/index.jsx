@@ -99,14 +99,14 @@ export default function Polygon() {
                 if (data.level.length == 1) {
                     return <div key={index} style={{display: "grid", color: "white", textAlign: "center"}}>
                         <img style={{width: "75px"}} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg"/>
-                        {data.level[0].title}
+                        <span>{data.level[0].title}</span>
                     </div>
                 } else {
                     return (<div key={index} style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                         {data.level.map((l, index) => {
                             return <div key={index} style={{display: "grid", color: "white", textAlign: "center"}}>
                                  <img style={{width: "75px"}} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg"/>
-                                {l.title}
+                                <span>{l.title}</span>
                             </div>
                         })
                         }
