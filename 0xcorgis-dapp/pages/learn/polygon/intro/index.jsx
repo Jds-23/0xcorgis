@@ -29,7 +29,7 @@ const data = [{
     answer: "polygon",
 },
 {
-    question: "Complete",
+    question: "We appreciate you for getting started!",
     choice: []
 }]
 
@@ -56,11 +56,6 @@ const variants = {
             opacity: 0
         };
     }
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
 };
 
 const Button = styled.button`
@@ -132,9 +127,6 @@ export default function Polygon() {
         else {
             setCorrect(false)
         }
-    }
-    const learn = async() => {
-        paginate(1)
     }
 
     async function connect() {

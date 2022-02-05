@@ -52,7 +52,7 @@ export default function EthGlobal() {
         <Head>
             <title>EthGlobal</title>
         </Head>
-        <div ref={divRef} style={{ margin: 0, height: "100%", width: "100%", position: "fixed",  top: "0" }}>
+        <div ref={divRef} style={{ margin: 0, height: "100%", width: "100%", position: "fixed",  top: "0",  zIndex: "-1" }}>
             <svg width={dimensions.width} height={dimensions.height}>
                 <defs>
                     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-k5_o0mah1d-1">
@@ -101,7 +101,7 @@ export default function EthGlobal() {
 
 
         <section style={{display: "grid", alignContent: "center", alignItems: "center", justifyContent: "center", justifyItems: "center", height: "100vh"}}>
-            <div style={{width: "500px", height: "400px"}}>
+            <div style={{width: "500px",height: "400px"}}>
             <EthGlobalRive/>
             </div>
             <h1 style={{ color: "white"}}>Choose your path</h1>
