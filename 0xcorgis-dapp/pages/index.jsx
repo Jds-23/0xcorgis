@@ -139,11 +139,12 @@ const Home = () => {
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gridRowGap: "15px" }}>
                     <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}> Build + Learn + Earn + Explore + Play</h3>
                     <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>Learn 2 Earn Games</Title> </h1>
-                    <h2 style={{ fontSize: "2em", margin: "0px", color: "#253078" }}>A fun, cute, informative, gateway to web3!</h2>
+                    <h2 style={{ fontSize: "2em", margin: "0px", color: "#253078" }}>Making web3 docs into a fun, cute, informative, game!</h2>
                     <Link href="learn">
                     <Button>
                       <strong>Press Start to Play ▶ </strong>
                       </Button>
+                      
                       </Link>
                 </div>
                 <div style={{
@@ -198,7 +199,7 @@ const Home = () => {
                 <div >
                     <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}>THE GAME</h3>
                     <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>0x</Title>corgis</h1>
-                    <p style={{ color: "#253078" }}>Defeat imposter syndrome and explore the web3 space  by converting documentation into puzzle and comics</p>
+                    <p style={{ color: "#253078" }}>Defeat imposter syndrome and explore the web3 space by playing puzzle and reading comics</p>
                 </div>
                 <div style={{
                     display: "flex",
