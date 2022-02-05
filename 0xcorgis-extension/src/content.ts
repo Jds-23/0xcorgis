@@ -16,7 +16,7 @@ corgisContainer.appendChild(canvas)
 
 const urls = ["https://metamask.io/",
     'https://metamask.io/download/',
-    "https://docs.polygon.technology/docs/home/new-to-polygon/",
+    "https://docs.polygon.technology/",
     "https://ethglobal.com/",
     "https://docs.chain.link/"
 ]
@@ -49,12 +49,27 @@ let url = window.location.href;
 
 if (urls.includes(window.location.href)) {
     if (window.location.href === "https://ethglobal.com/") {
-                    document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
-                    const tooltip = document.createElement('div');
-                    tooltip.setAttribute("class", "Oxcorgis-tooltip");
-                    tooltip.innerHTML = "<div>Welcome to EthGlobal!</div><div class='Oxcorgis-links'><a href=''>Learn</a><a href=''>Play</a></div>";
-                    document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
+        document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
+        const tooltip = document.createElement('div');
+        tooltip.setAttribute("class", "Oxcorgis-tooltip");
+        tooltip.innerHTML = "<div>Welcome to EthGlobal!</div><div class='Oxcorgis-links'><a href='https://0xcorgis-dapp.vercel.app/learn/ethglobal'>Learn</a><a href=''>Play</a></div>";
+        document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
     }
+    if (window.location.href === "https://docs.polygon.technology/") {
+        document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
+        const tooltip = document.createElement('div');
+        tooltip.setAttribute("class", "Oxcorgis-tooltip");
+        tooltip.innerHTML = "<div>Welcome to Polygon!</div><div class='Oxcorgis-links'><a href='https://0xcorgis-dapp.vercel.app/learn/polygon'>Learn</a><a href='https://0xcorgis-dapp.vercel.app/learn/polygon/intro'>Play</a></div>";
+        document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
+    }
+    if (window.location.href === "https://docs.chain.link/") {
+        document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
+        const tooltip = document.createElement('div');
+        tooltip.setAttribute("class", "Oxcorgis-tooltip");
+        tooltip.innerHTML = "<div>Welcome to Chanlink!</div><div class='Oxcorgis-links'><a href='https://0xcorgis-dapp.vercel.app/learn/chainlink'>Learn</a><a href=''>Play</a></div>";
+        document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
+    }
+
 }
 
 

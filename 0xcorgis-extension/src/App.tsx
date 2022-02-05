@@ -169,7 +169,7 @@ const Footer = styled.footer`
 
 const quests = [
     {
-        url: "https://docs.polygon.technology/docs/home/new-to-polygon/",
+        url: "https://docs.polygon.technology/",
         text: "polygon",
         image: "https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg"
     },
