@@ -52,7 +52,7 @@ if (urls.includes(window.location.href)) {
         document.getElementsByClassName("Oxcorgis-tooltip")[0]?.remove();
         const tooltip = document.createElement('div');
         tooltip.setAttribute("class", "Oxcorgis-tooltip");
-        tooltip.innerHTML = "<div>Welcome to EthGlobal!</div><div class='Oxcorgis-links'><a href='https://0xcorgis-dapp.vercel.app/learn/ethglobal'>Learn</a><a href=''>Play</a></div>";
+        tooltip.innerHTML = "<div>Welcome to EthGlobal!</div><div class='Oxcorgis-links'><a href='https://0xcorgis-dapp.vercel.app/learn/ethglobal'>Learn</a><a href='https://0xcorgis-dapp.vercel.app/learn/ethglobal/about'>Play</a></div>";
         document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
     }
     if (window.location.href === "https://docs.polygon.technology/") {
