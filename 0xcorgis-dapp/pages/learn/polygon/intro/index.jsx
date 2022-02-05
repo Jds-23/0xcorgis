@@ -130,29 +130,6 @@ export default function Polygon() {
         }
 
     }
-
-
-    // const { RiveComponent: MetaMaskRive, rive: metamaskrive } = useRive({
-    //     src: "https://s3.amazonaws.com/cdn.codewithcorgis.com/animations/metamask.riv",
-    //     autoplay: true,
-    //     animations: ["metamask"]
-    // });
-
-    // const { RiveComponent: MetaMaskCorgisRive, rive: metamaskcorgisrive } = useRive({
-    //     src: "https://s3.amazonaws.com/cdn.codewithcorgis.com/animations/metastart.riv",
-    //     autoplay: true,
-    //     animations: ["start"]
-    // });
-
-
-    // const { RiveComponent: MetaMaskRive1, rive: metamaskrive1 } = useRive({
-    //     src: "https://s3.amazonaws.com/cdn.codewithcorgis.com/animations/metamask.riv",
-    //     autoplay: true,
-    //     animations: ["metamask"]
-    // });
-
-    // const animation = [<MetaMaskRive style={{ width: "100%", height: "100%" }} />, <MetaMaskRive1 style={{ width: "100%", height: "100%" }} />]
-
     return <>
         <Head>
             <title>Road to Polygon</title>
