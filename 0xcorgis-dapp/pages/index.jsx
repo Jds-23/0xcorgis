@@ -158,8 +158,8 @@ const Home = () => {
             </section>
         </Hero>
         <section style={{ textAlign: "center", paddingTop: "30px", display: "grid", justifyItems: "center" }}>
-            <strong>Roadmap</strong>
-            <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 30" enableBackground="new 0 0 30 30" xmlSpace="preserve">
+            <strong style={{color: "white"}}>Roadmap</strong>
+            <svg fill="white" height="16" width="16" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 30 30" enableBackground="new 0 0 30 30" xmlSpace="preserve">
                 <g id="Background_xA0_Image_1_">
                 </g>
                 <g id="Row_1_1_">
@@ -184,9 +184,9 @@ const Home = () => {
                     <JumpRive />
                 </div>
                 <div >
-                    <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}>FEATURES</h3>
-                    <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>0x</Title>corgis</h1>
-                    <p style={{ color: "#253078" }}>A love letter to web3 for a new audience, 0xcorgis is an teaching exploration game making documentation into a puzzle game.</p>
+                    <h3 style={{ fontSize: "1.5em", margin: "0px", color: "white" }}>FEATURES</h3>
+                    <h1 style={{ fontSize: "3.5em", margin: "0px", color: "white" }}><Title>0x</Title>corgis</h1>
+                    <p style={{ color: "white" }}>A love letter to web3 for a new audience, 0xcorgis is an teaching exploration game making documentation into a puzzle game.</p>
                 </div>
 
 
@@ -197,9 +197,9 @@ const Home = () => {
 
             <div style={{ alignSelf: "center", width: "1080px", height: "700px", display: "grid", gridTemplateColumns: "1fr 1fr", justifyContent: "center", justifyItems: "center", zIndex: "305", alignItems: "center" }}>
                 <div >
-                    <h3 style={{ fontSize: "1.5em", margin: "0px", color: "#253078" }}>THE GAME</h3>
-                    <h1 style={{ fontSize: "3.5em", margin: "0px", color: "#253078" }}><Title>0x</Title>corgis</h1>
-                    <p style={{ color: "#253078" }}>Defeat imposter syndrome and explore the web3 space by playing puzzle and reading comics</p>
+                    <h3 style={{ fontSize: "1.5em", margin: "0px", color: "white" }}>THE GAME</h3>
+                    <h1 style={{ fontSize: "3.5em", margin: "0px", color: "white" }}><Title>0x</Title>corgis</h1>
+                    <p style={{ color: "white" }}>Defeat imposter syndrome and explore the web3 space by playing puzzle and reading comics</p>
                 </div>
                 <div style={{
                     display: "flex",

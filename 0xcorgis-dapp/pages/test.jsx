@@ -4,9 +4,6 @@ import { ethers, utils, BigNumber } from 'ethers'
 import { playAddress }  from '../config'
 import Play from '../artifacts/contracts/Play.sol/Play.json'
 
-
-
-
 export default function Home() {
     useEffect(() => {
         //load()
