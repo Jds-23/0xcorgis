@@ -1,11 +1,14 @@
 import Head from 'next/head'
-import { useEthers } from '@usedapp/core';
+import { ethers, utils, BigNumber } from 'ethers'
 import { useEffect, useState, createRef } from 'react'
 import { useRive } from "rive-react";
 import styled from '@emotion/styled'
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import ShortAddress from '../../../../components/ShortAddress';
+import Web3Modal from "web3modal"
+import { playAddress }  from '../../../../config';
+import Play from '../../../../artifacts/contracts/Play.sol/Play.json'
 
 
 function shuffle(arr) {
@@ -24,10 +27,11 @@ const data = [{
     question: "Which of these is \"Polygon\"?",
     choice: shuffle(["ethglobal", "polygon", "chainlink"]),
     answer: "polygon",
-    type: "multiple"
-}
-
-]
+},
+{
+    question: "Complete",
+    choice: []
+}]
 
 
 
@@ -105,13 +109,13 @@ export default function Polygon() {
     const imageIndex = wrap(0, data.length, page);
     const [selected, setSelected] = useState('')
     const [isCorrect, setCorrect] = useState(-1)
+    const [account, setAccount] = useState();
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
     };
     const divRef = createRef()
     const dimensions = useRefDimensions(divRef)
-    const { account } = useEthers()
     const params = {
         src: "https://s3.amazonaws.com/cdn.codewithcorgis.com/animations/logoborder.riv",
         autoplay: true,
@@ -128,13 +132,62 @@ export default function Polygon() {
         else {
             setCorrect(false)
         }
+    }
+    const learn = async() => {
+        paginate(1)
+    }
+
+    async function connect() {
+        const web3Modal = new Web3Modal()
+        const connection = await web3Modal.connect()
+        const provider = new ethers.providers.Web3Provider(connection)
+        const signer = provider.getSigner()
+        const account = await signer.getAddress();
+        setAccount(account);
 
     }
+
+    async function play() {
+        const web3Modal = new Web3Modal()
+        const connection = await web3Modal.connect()
+        const provider = new ethers.providers.Web3Provider(connection)
+        const signer = provider.getSigner()
+        const contract = new ethers.Contract(playAddress, Play.abi, signer)
+        const price = ethers.utils.parseUnits("0.0025", 'ether')
+        const transaction = await contract.learn({
+            value: price
+        })
+        await transaction.wait()
+        paginate(1)
+    }
+
+    async function earn() {
+        const web3Modal = new Web3Modal()
+        const connection = await web3Modal.connect()
+        const provider = new ethers.providers.Web3Provider(connection)
+        const signer = provider.getSigner()
+        const contract = new ethers.Contract(playAddress, Play.abi, signer)
+        const account = await signer.getAddress();
+        const balance = await contract.balances(account)
+        console.log(balance)
+        const data = BigNumber.from(balance);
+        console.log(data);
+        console.log(utils.formatEther(data));
+        const d = utils.formatEther(data)
+        const earnPrice = parseFloat(d) * (1 - 0.02)
+        console.log(earnPrice)
+        const price = ethers.utils.parseUnits(`${earnPrice}`, 'ether')
+        const transaction = await contract.earn(price)
+        await transaction.wait()
+    }
+
+
+
     return <>
         <Head>
             <title>Road to Polygon</title>
         </Head>
-        <div ref={divRef} style={{ margin: 0, height: "100%", width: "100%", position: "fixed", backgroundColor: "#101428" }}>
+        <div ref={divRef} style={{ margin: 0, height: "100%", width: "100%", position: "fixed", zIndex: "-1" }}>
             <svg width={dimensions.width} height={dimensions.height}>
                 <defs>
                     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-k5_o0mah1d-1">
@@ -222,14 +275,6 @@ export default function Polygon() {
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={1}
-                onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = swipePower(offset.x, velocity.x);
-                    if (swipe < -swipeConfidenceThreshold) {
-                        paginate(1);
-                    } else if (swipe > swipeConfidenceThreshold) {
-                        paginate(-1);
-                    }
-                }}
             >
                 <section style={{ display: "grid", justifyContent: "center", height: "100%", paddingTop: "20px", marginTop: "50px", }}>
                     <div>
@@ -248,7 +293,7 @@ export default function Polygon() {
                                     key={index}
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }} >
-                                    <div  className={selected == d ? "selected" : ""} onClick={() => { setSelected(d) }} style={{
+                                    <div className={selected == d ? "selected" : ""} onClick={() => { setSelected(d) }} style={{
                                         color: "white", width: "200px", height: "250px", cursor: "pointer", borderRadius: "16px", padding: "15px",
                                         borderRadius: "16px",
                                         borderWidth: selected == d ? '5px 5px 10px' : "3px 3px 10px",
@@ -268,10 +313,11 @@ export default function Polygon() {
 
                     </div>
                     <div style={{ display: "grid", justifyContent: "center", gridTemplateRows: "0fr 0fr", gridGap: "30px" }}>
+                        {!account && <Button onClick={connect}>Please Connect Wallet</Button>}
                         {
-                            imageIndex == 0 ?
-                                <Button onClick={() => paginate(1)} >Start</Button> :
-                                <Button disabled={!selected} onClick={check} >Check</Button>
+                            account  && (imageIndex === 0 ?
+                                <Button onClick={play} >Stake 0.0025 Polygon to Play</Button> :
+                                imageIndex === data.length - 1 ? <Button onClick={earn}>Earn</Button> : <Button disabled={!selected} onClick={check} >Check</Button>)
                         }
                     </div>
                 </section>
