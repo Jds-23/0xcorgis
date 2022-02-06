@@ -129,6 +129,7 @@ export default function Polygon() {
         }
         else {
             setCorrect(false)
+            alert("Incorrect Try Again")
         }
     }
 
@@ -296,7 +297,7 @@ export default function Polygon() {
                                 {data[imageIndex].question}
                              
                             </span>
-                            { (imageIndex === 0 || imageIndex == 2) && <img style={{height: "420px", width: "420px"}} src="https://ipfs.io/ipfs/Qma8tgCPASkZaQgxzQDFuELUiZ876uaSwkQo2WVpSU9yQy?filename=polygonComic.svg"/>}
+                            { (imageIndex === 0 || imageIndex == 2) && <img style={{height: "420px", width: "420px"}} src="/polygonComic.svg"/>}
                         </div>
                     </div>
                     <div style={{ display: "grid", justifyContent: "center" }}>
