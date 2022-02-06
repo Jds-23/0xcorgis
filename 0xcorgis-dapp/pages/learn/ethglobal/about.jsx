@@ -232,7 +232,7 @@ export default function EthGlobalAbout() {
     }
     const check = () => {
         console.log(phrase.map((d) => d.word).join(' '))
-        answers = ["Ethglobal helps onboard developers and designers to web3", "Ethglobal helps onboard  designers and developers  to web3" ]
+        const answers = ["Ethglobal helps onboard developers and designers to web3", "Ethglobal helps onboard  designers and developers  to web3" ]
         if(phrase.map((d) => d.word).join(' ') === answers[0] ||  phrase.map((d) => d.word).join(' ') === answers[1] ){
             setSelected('')
             paginate(1)
