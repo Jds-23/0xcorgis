@@ -84,6 +84,7 @@ if (urls.includes(window.location.href)) {
         tooltip.setAttribute("class", "Oxcorgis-tooltip");
         tooltip.innerHTML = "<div>Scroll to the Bottom!</div>";
         document.getElementsByClassName('Oxcorgis')[0].appendChild(tooltip);
+      
     }
 
 }
@@ -184,6 +185,15 @@ if (urls.includes(window.location.href)) {
             document.getElementsByClassName("Button__ButtonWrapper-sc-5os99m-0 jZLovj button")[0].appendChild(step2Div);
 
         }, delayMetaMaskStep2);
+    }
+
+
+    if(window.location.href === "https://polygonscan.com/"){
+        const step1Div = document.createElement('div');
+        step1Div.setAttribute("class", "PolygonScan-Corgis-Step-1");
+        const data = document.getElementsByClassName("btn btn-xss btn-soft-light text-nowrap d-flex align-items-center mr-2")[0].innerHTML
+        document.getElementsByClassName("btn btn-xss btn-soft-light text-nowrap d-flex align-items-center mr-2")[0].appendChild(step1Div)
+        document.getElementsByClassName('PolygonScan-Corgis-Step-1')[0].innerHTML = data;
     }
 
 

@@ -107,6 +107,39 @@
   border-radius: 16px;
 }
 
+.PolygonScan-Corgis-Step-1 {
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 15px;
+  display: grid;
+  border-width: 3px 3px 10px;
+  border-bottom-color: initial;
+  color: #253078;
+  border-style: solid;
+  border-top-color: initial;
+  background: linear-gradient(135deg, #FF3366, #CB5EEE, #ee7752, #FFCC33, #00B3CC, #E233FF, #23a6d5);
+  height: 50px;
+  z-index: 1;
+  font-size: 12px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 150px;
+  position: absolute;
+  padding: 8px;
+  border-radius: 10px;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-duration: .15s;
+  transition-property: all;
+  animation: gradient 20s ease infinite;
+  background-size: 400% 400%;
+}
+
+.PolygonScan-Corgis-Step-1:hover {
+  transform: scale(1.5);
+}
+
+
 .MetaMask-Corgis-Step-2 {
   cursor: pointer;
   border-radius: 16px;
