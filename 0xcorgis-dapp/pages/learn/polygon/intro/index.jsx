@@ -9,6 +9,7 @@ import ShortAddress from '../../../../components/ShortAddress';
 import Web3Modal from "web3modal"
 import { playAddress }  from '../../../../config';
 import Play from '../../../../artifacts/contracts/Play.sol/Play.json'
+import { useRouter } from 'next/router';
 
 
 function shuffle(arr) {
@@ -106,6 +107,7 @@ export default function Polygon() {
     const [isCorrect, setCorrect] = useState(-1)
     const [account, setAccount] = useState();
     const [isStake, setStake] = useState(false)
+    const router = useRouter()
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
@@ -186,6 +188,8 @@ export default function Polygon() {
         const price = ethers.utils.parseUnits(`${earnPrice}`, 'ether')
         const transaction = await contract.earn(price)
         await transaction.wait()
+        router.push("/learn/polygon")
+
 
     }
 
@@ -287,15 +291,16 @@ export default function Polygon() {
                 <section style={{ display: "grid", justifyContent: "center", height: "100%", paddingTop: "20px", marginTop: "50px", }}>
                     <div>
 
-                        <div style={{ color: "white", display: "grid", fontWeight: "600" }}>
+                        <div style={{ color: "white", display: "grid", fontWeight: "600", alignItems: "center", justifyItems: "center" }}>
                             <span style={{ fontSize: "35px", textAlign: "center" }} >
                                 {data[imageIndex].question}
-
+                             
                             </span>
+                            { (imageIndex === 0 || imageIndex == 2) && <img src="https://ipfs.io/ipfs/Qma8tgCPASkZaQgxzQDFuELUiZ876uaSwkQo2WVpSU9yQy?filename=polygonComic.svg"/>}
                         </div>
                     </div>
                     <div style={{ display: "grid", justifyContent: "center" }}>
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", height: "450px", alignItems: "center", gridGap: "15px", }}>
+                        { imageIndex === 1 && <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", height: "450px", alignItems: "center", gridGap: "15px", }}>
                             {data[imageIndex]?.choice?.map((d, index) => {
                                 return <motion.div
                                     key={index}
@@ -317,7 +322,7 @@ export default function Polygon() {
                                     </div>
                                 </motion.div>
                             })}
-                        </div>
+                        </div>}
 
                     </div>
                     <div style={{ display: "grid", justifyContent: "center", gridTemplateRows: "0fr 0fr", gridGap: "30px" }}>

@@ -9,6 +9,7 @@ import ShortAddress from '../../../components/ShortAddress';
 import Web3Modal from "web3modal"
 import { playAddress } from '../../../config';
 import Play from '../../../artifacts/contracts/Play.sol/Play.json'
+import { useRouter } from 'next/router';
 
 function shuffle(arr) {
     return Array(arr.length).fill(null)
@@ -197,6 +198,7 @@ export default function EthGlobalAbout() {
     const [isCorrect, setCorrect] = useState(-1)
     const [staked, setStaked] = useState()
     const [account, setAccount] = useState();
+    const router = useRouter()
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
@@ -210,6 +212,14 @@ export default function EthGlobalAbout() {
 
     };
     const { RiveComponent: LogoRive, rive: logorive } = useRive(params);
+    const params2 = {
+        src: "https://ipfs.io/ipfs/Qmcy42hrBmpGEbjVokDEvki47zQwjwaFAvb4caD3iRUCQW?filename=ethglobal.riv",
+        autoplay: true,
+        animations: ["ethglobal"]
+    };
+
+
+    const { RiveComponent: EthGlobalRive, rive: ethglobalrive } = useRive(params2);
 
     async function connect() {
         const web3Modal = new Web3Modal()
@@ -222,26 +232,29 @@ export default function EthGlobalAbout() {
     }
     const check = () => {
         console.log(phrase.map((d) => d.word).join(' '))
-        if(phrase.map((d) => d.word).join(' ') === "Ethglobal helps onboard developers and designers to web3"){
+        answers = ["Ethglobal helps onboard developers and designers to web3", "Ethglobal helps onboard  designers and developers  to web3" ]
+        if(phrase.map((d) => d.word).join(' ') === answers[0] ||  phrase.map((d) => d.word).join(' ') === answers[1] ){
             setSelected('')
             paginate(1)
             setCorrect(-1)
         } else {
             setCorrect(false)
+            alert("Incorrect Try Again")
         }
+        
     }
 
     async function play() {
-        // const web3Modal = new Web3Modal()
-        // const connection = await web3Modal.connect()
-        // const provider = new ethers.providers.Web3Provider(connection)
-        // const signer = provider.getSigner()
-        // const contract = new ethers.Contract(playAddress, Play.abi, signer)
-        // const price = ethers.utils.parseUnits("0.0025", 'ether')
-        // const transaction = await contract.learn({
-        //     value: price
-        // })
-        // await transaction.wait()
+        const web3Modal = new Web3Modal()
+        const connection = await web3Modal.connect()
+        const provider = new ethers.providers.Web3Provider(connection)
+        const signer = provider.getSigner()
+        const contract = new ethers.Contract(playAddress, Play.abi, signer)
+        const price = ethers.utils.parseUnits("0.0025", 'ether')
+        const transaction = await contract.learn({
+            value: price
+        })
+        await transaction.wait()
         paginate(1)
         setStaked(true)
     }
@@ -264,6 +277,7 @@ export default function EthGlobalAbout() {
         const price = ethers.utils.parseUnits(`${earnPrice}`, 'ether')
         const transaction = await contract.earn(price)
         await transaction.wait()
+        router.push("/learn/ethglobal")
 
     }
     return <>
@@ -274,32 +288,32 @@ export default function EthGlobalAbout() {
             <svg width={dimensions.width} height={dimensions.height}>
                 <defs>
                     <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-k5_o0mah1d-1">
-                        <stop stopColor={"#1BC7A4"} offset="0%"></stop>
-                        <stop stopColor={"#1BC7A4"} offset="100%"></stop>
+                        <stop stopColor={ isCorrect === -1 ?  "#1BC7A4": (isCorrect ? 'green' : '#ff4b4b')} offset="0%"></stop>
+                        <stop stopColor={ isCorrect === -1 ? "#1BC7A4": (isCorrect ? 'green' : '#ff4b4b')} offset="100%"></stop>
                     </linearGradient>
                 </defs>
                 <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                    <g fill={"#1BC7A4"}>
+                    <g fill={ isCorrect === -1 ?  "#1BC7A4": (isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`35 3.63797881e-12 ${dimensions.width} 3.63797881e-12 ${dimensions.width} 35 0 35`}></polygon>
                     </g>
-                    <g fill={"#FFC814"}>
+                    <g fill={ isCorrect === -1 ?  "#FFC814": (isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`${dimensions.width - 35} 3.63797881e-12 ${dimensions.width} 3.63797881e-12 ${dimensions.width} ${dimensions.height - 35} ${dimensions.width - 35} ${dimensions.height - 35}`}></polygon>
                     </g>
-                    <g fill={"#FFB252"}>
+                    <g fill={isCorrect === -1 ?  "#FFB252": (isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`${dimensions.width - 35} 3.63797881e-12 ${dimensions.width - 25} 3.63797881e-12 ${dimensions.width - 25} ${dimensions.height - 35} ${dimensions.width - 35} ${dimensions.height - 35}`}></polygon>
                     </g>
-                    <g fill={"#FF5795"}>
+                    <g fill={isCorrect === -1 ?  "#FF5795": (isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`0,${dimensions.height - 35}  0,${dimensions.height}  ${dimensions.width - 35},${dimensions.height} ${dimensions.width},${dimensions.height - 35}`}></polygon>
                     </g>
-                    <g fill={"#FF3423"}>
+                    <g fill={isCorrect === -1 ?  "#FF3423":(isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`0,${dimensions.height - 35}  0,${dimensions.height - 25}  ${dimensions.width - 10},${dimensions.height - 25} ${dimensions.width},${dimensions.height - 35}`}></polygon>
                     </g>
 
-                    <g fill={"#5463FF"}>
+                    <g fill={isCorrect === -1 ? "#5463FF": (isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`0,35  0,${dimensions.height - 35}  35,${dimensions.height - 35} 35,35`}></polygon>
                     </g>
 
-                    <g fill={"#0652AA"}>
+                    <g fill={isCorrect === -1 ? "#0652AA": (isCorrect ? 'green' : '#ff4b4b') }>
                         <polygon id="Rectangle" points={`25,35  25,${dimensions.height - 35}  35,${dimensions.height - 35} 35,35`}></polygon>
                     </g>
 
@@ -367,7 +381,9 @@ export default function EthGlobalAbout() {
                         <div style={{ color: "white", display: "grid", fontWeight: "600" }}>
                             <span style={{ fontSize: "35px", textAlign: "center" }} >
                                 {data[imageIndex].question}
-
+                                 {imageIndex === 0  && <div style={{height: "500px"}}>
+                                <EthGlobalRive/>
+                                </div>}
                             </span>
                         </div>
                     </div>

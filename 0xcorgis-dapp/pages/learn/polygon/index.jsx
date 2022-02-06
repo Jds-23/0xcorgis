@@ -97,8 +97,8 @@ export default function Polygon() {
             <section >
                 {pathways.map((data, index) => {
                     if (data.level.length == 1) {
-                        return <Link key={index} href="https://metamask.io/" target="_blank">
-                            <div  style={{ display: "grid", color: "white", textAlign: "center", alignItems: "center", justifyItems: "center" }}>
+                        return <Link key={index} href="https://metamask.io/" target="_blank" >
+                            <div  style={{ display: "grid", color: "white", textAlign: "center", alignItems: "center", justifyItems: "center", cursor: "pointer" }}>
                                 <img style={{ width: "75px" }} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg" />
                                 <span>{data.level[0].title}</span>
                             </div>
@@ -106,8 +106,8 @@ export default function Polygon() {
                     } else {
                         return (<div key={index} style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                             {data.level.map((l, index) => {
-                                return <Link href={l.link} key={index}>
-                                    <div  style={{ display: "grid", color: "white", textAlign: "center", alignItems: "center", justifyItems: "center" }}>
+                                return <Link href={l.link} key={index} >
+                                    <div  style={{ display: "grid", color: "white", textAlign: "center", alignItems: "center", justifyItems: "center", cursor: "pointer" }}>
                                         <img style={{ width: "75px" }} src="https://ipfs.io/ipfs/QmaYE29Ci5XzdHFiQPUEgWXbnNXYdJ7fBHN5pyzk1XMe33?filename=polygon.svg" />
                                         <span>{l.title}</span>
                                     </div>

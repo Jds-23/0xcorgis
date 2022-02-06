@@ -90,7 +90,7 @@ const data = [{
 },
 {
     sponsors: "chainlink",
-    comingSoon: false
+    comingSoon: true
 },
 {
     sponsors: "ens",
