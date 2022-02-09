@@ -30,7 +30,9 @@ const data = [{
     answer: "polygon",
 },
 {
-    question: "We appreciate you for getting started!",
+    question: `Congrats on completion!
+    Mint your nft badge or rewards! 
+    Coming soon ...`,
     choice: []
 }]
 
@@ -86,6 +88,63 @@ const Button = styled.button`
     }
 
 `
+
+const Loading = styled.div`
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+  & div {
+    top: 32px;
+    left: 32px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #fcf;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  & div:after,div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: #fcf;
+  }
+  & div:before {
+    left: -24px;
+    border-radius: 50% 0 0 50%;
+  }
+  & div:after {
+    top: -24px;
+    border-radius: 50% 50% 0 0;
+  }
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+  
+`
+
+
 const useRefDimensions = (ref) => {
     const [height, setHeight] = useState(1);
     const [width, setWidth] = useState(1);
@@ -108,6 +167,7 @@ export default function Polygon() {
     const [account, setAccount] = useState();
     const [isStake, setStake] = useState(false)
     const router = useRouter()
+    const [loading, setLoading] = useState(false);
 
     const paginate = (newDirection) => {
         setPage([page + newDirection, newDirection]);
@@ -158,6 +218,7 @@ export default function Polygon() {
     }
 
     async function play() {
+        setLoading(true);
         const web3Modal = new Web3Modal()
         const connection = await web3Modal.connect()
         const provider = new ethers.providers.Web3Provider(connection)
@@ -168,6 +229,7 @@ export default function Polygon() {
             value: price
         })
         await transaction.wait()
+        setLoading(false)
         paginate(1)
     }
 
@@ -291,14 +353,18 @@ export default function Polygon() {
             >
                 <section style={{ display: "grid", justifyContent: "center", height: "100%", paddingTop: "20px", marginTop: "50px", }}>
                     <div>
-
-                        <div style={{ color: "white", display: "grid", fontWeight: "600", alignItems: "center", justifyItems: "center" }}>
+                    {loading ?
+                                <div style={{display: "grid", gridTemplateRows: "1fr 1fr", alignContent: "center", alignItems: "center", justifyItems: "center", fontSize: "24px"}}>
+                                    <Loading class="lds-heart"><div></div></Loading>
+                                    <p style={{color: "white"}}>Loading...</p>
+                                </div>
+                                :<div style={{ color: "white", display: "grid", fontWeight: "600", alignItems: "center", justifyItems: "center" }}>
                             <span style={{ fontSize: "35px", textAlign: "center" }} >
                                 {data[imageIndex].question}
                              
                             </span>
                             { (imageIndex === 0 || imageIndex == 2) && <img style={{height: "420px", width: "420px"}} src="/polygonComic.svg"/>}
-                        </div>
+                    </div> }
                     </div>
                     <div style={{ display: "grid", justifyContent: "center" }}>
                         { imageIndex === 1 && <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", height: "450px", alignItems: "center", gridGap: "15px", }}>
