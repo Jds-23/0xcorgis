@@ -138,7 +138,7 @@ const Home = () => {
                 <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gridRowGap: "15px" }}>
                     <h3 style={{ fontSize: "1.5em", margin: "0px", color: "white" }}> Build + Learn + Earn + Explore + Play</h3>
                     <h1 style={{ fontSize: "3.5em", margin: "0px", color: "white" }}><Title>Learn 2 Earn Games</Title> </h1>
-                    <h2 style={{ fontSize: "2em", margin: "0px", color: "white" }}>Making web3 docs into a fun, cute, informative, game!</h2>
+                    <h2 style={{ fontSize: "2em", margin: "0px", color: "white" }}>We are converting web3 docs into a fun, cute, informative game!</h2>
                     <Link href="learn">
                     <Button>
                       <strong>Press Start to Play ▶ </strong>
