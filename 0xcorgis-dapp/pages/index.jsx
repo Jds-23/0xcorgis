@@ -139,12 +139,17 @@ const Home = () => {
                     <h3 style={{ fontSize: "1.5em", margin: "0px", color: "white" }}> Build + Learn + Earn + Explore + Play</h3>
                     <h1 style={{ fontSize: "3.5em", margin: "0px", color: "white" }}><Title>Learn 2 Earn Games</Title> </h1>
                     <h2 style={{ fontSize: "2em", margin: "0px", color: "white" }}>We are converting web3 docs into a fun, cute, informative game!</h2>
+                    <div style={{display: "grid", gridTemplateColumns: "1fr 1fr", gridGap: "5px"}}>
                     <Link href="learn">
                     <Button>
                       <strong>Press Start to Play ▶ </strong>
                       </Button>
                       
                       </Link>
+                      <Button>
+                        <strong>Download now</strong>
+                      </Button>
+                      </div>
                 </div>
                 <div style={{
                     display: "flex",
