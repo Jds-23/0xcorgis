@@ -29,7 +29,7 @@ const config: HardhatUserConfig = {
   defaultNetwork: "matic",
   networks: {
     matic: {
-      url: "https://rpc-mumbai.maticvigil.com",
+      url: "https://rpc-mumbai.matic.today",
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : []
     },
     ropsten: {
